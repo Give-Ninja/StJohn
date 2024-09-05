@@ -1,0 +1,53 @@
+---
+const steps = [
+  { number: 1, title: "<a href=''>Contact us</a> for a free consultation" },
+  { number: 2, title: "We tailor your training material" },
+  { number: 3, title: "Shared learning at your workplace" },
+  { number: 4, title: "Get your certifications and SafeWork compliance" },
+];
+import Button from "./Button.astro";
+---
+
+<section class="py-8 pb-10 px-4 bg-white container md:mx-auto lg:max-w-[1120px] lg:py-20">
+  <h2 class="text-2xl font-bold mb-6 text-center md:mb-8 md:text-3xl lg:mb-14">How it works</h2>
+  <div class="relative md:max-w-sm md:mx-auto lg:max-w-full">
+    <div class="absolute left-4 top-4 bottom-4 w-0.5 h-[80%] bg-red lg:invisible"></div>
+    <div class="flex flex-col gap-8 lg:flex-row lg:justify-center">
+      <div class="flex items-start lg:flex-col lg:basis-3/12">
+        <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-red text-white flex items-center justify-center font-bold text-base lg:w-12 lg:h-12 lg:text-xl">
+          1
+        </div>
+        <div class="ml-3 pt-1 lg:ml-0 lg:mt-2">
+          <p class="font-bold text-base lg:text-lg"><button type="button" class="modal-trigger underline">Contact us</button> for a free consultation</p>
+        </div>
+      </div>
+      <div class="flex items-start lg:flex-col lg:basis-3/12">
+        <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-red text-white flex items-center justify-center font-bold text-base lg:w-12 lg:h-12 lg:text-xl">
+          2
+        </div>
+        <div class="ml-3 pt-1 lg:ml-0 lg:mt-2">
+          <p class="font-bold text-base lg:text-lg">We tailor your training material</p>
+        </div>
+      </div>
+      <div class="flex items-start lg:flex-col lg:basis-3/12">
+        <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-red text-white flex items-center justify-center font-bold text-base lg:w-12 lg:h-12 lg:text-xl">
+          3
+        </div>
+        <div class="ml-3 pt-1 lg:ml-0 lg:mt-2">
+          <p class="font-bold text-base lg:text-lg">Shared learning at your workplace</p>
+        </div>
+      </div>
+      <div class="flex items-start lg:flex-col lg:basis-3/12">
+        <div class="relative z-10 flex-shrink-0 w-8 h-8 bg-red text-white flex items-center justify-center font-bold text-base lg:w-12 lg:h-12 lg:text-xl">
+          4
+        </div>
+        <div class="ml-3 pt-1 lg:ml-0 lg:mt-2">
+          <p class="font-bold text-base lg:text-lg">Get your certifications and SafeWork compliance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-8 md:mt-10 lg:mt-16">
+    <Button>Get free consultation</Button>
+  </div>
+</section>

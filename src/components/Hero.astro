@@ -1,0 +1,44 @@
+---
+import Image from "astro/components/Image.astro"
+import HeroImage from '../images/resuscitation-class.jpg';
+import Button from "./Button.astro";
+---
+
+<section class="bg-white text-black container md:flex md:flex-row-reverse md:mx-auto md:py-10 md:gap-10">
+  <div class="relative flex md:basis-6/12">
+    <Image class="md:object-cover" src={HeroImage} alt="Group first–aid class at a workplace" />
+    <span class="-mb-[1px] px-2 py-1.5 bg-white/80 backdrop-blur-sm	text-center bottom-0 right-0 absolute uppercase text-[13px] tracking-wider font-semibold md:left-0 md:text-sm md:px-4">140+ years of experience</span>
+  </div>
+  <div class="px-4 pt-4 pb-8 md:basis-6/12">
+    <h1 class="text-2xl font-bold mb-6 md:text-4xl md:leading-tight">First aid training tailored to your workplace</h1>
+    
+    <ul class="flex flex-col gap-4 mb-6">
+      <li class="flex items-start gap-1 -ml-1">
+        <svg class="flex-shrink-0 -mt-0.5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16 27.25C22.2132 27.25 27.25 22.2132 27.25 16C27.25 9.7868 22.2132 4.75 16 4.75C9.7868 4.75 4.75 9.7868 4.75 16C4.75 22.2132 9.7868 27.25 16 27.25ZM20.1776 11.918L13.2959 18.7996L11.5006 17.0043L10.0863 18.4185L13.2959 21.628L21.5918 13.3322L20.1776 11.918Z" fill="#E5173F"/>
+        </svg>          
+        <span class="text-xl">Comprehensive, hands-on training with real life scenarios</span>
+      </li>
+      <li class="flex items-start gap-1 -ml-1">
+        <svg class="flex-shrink-0 -mt-0.5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16 27.25C22.2132 27.25 27.25 22.2132 27.25 16C27.25 9.7868 22.2132 4.75 16 4.75C9.7868 4.75 4.75 9.7868 4.75 16C4.75 22.2132 9.7868 27.25 16 27.25ZM20.1776 11.918L13.2959 18.7996L11.5006 17.0043L10.0863 18.4185L13.2959 21.628L21.5918 13.3322L20.1776 11.918Z" fill="#E5173F"/>
+        </svg>          
+        <span class="text-xl">Training without the travel – we come to you</span>
+      </li>
+      <li class="flex items-start gap-1 -ml-1">
+        <svg class="flex-shrink-0 -mt-0.5" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16 27.25C22.2132 27.25 27.25 22.2132 27.25 16C27.25 9.7868 22.2132 4.75 16 4.75C9.7868 4.75 4.75 9.7868 4.75 16C4.75 22.2132 9.7868 27.25 16 27.25ZM20.1776 11.918L13.2959 18.7996L11.5006 17.0043L10.0863 18.4185L13.2959 21.628L21.5918 13.3322L20.1776 11.918Z" fill="#E5173F"/>
+        </svg>          
+        <span class="text-xl">Industry-specific and nationally accredited</span>
+      </li>
+    </ul>
+    
+    <div class="text-center mt-8 mb-6 md:text-left">
+      <Button>Get free consultation</Button>
+    </div>
+    
+    <p class="text-xl font-bold text-center md:text-left md:text-lg">
+      96% of students feel confident applying first aid after our course
+    </p>
+  </div>
+</section>

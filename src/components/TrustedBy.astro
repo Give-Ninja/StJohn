@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+
+import Unilever from '../images/logos/unilever.svg';
+import SGS from '../images/logos/sydney-grammar-school@2x.png';
+import SES from '../images/logos/SES.svg';
+import NSW from '../images/logos/Transport_for_NSW.svg';
+import Toyota from '../images/logos/Toyota_EU 1.svg';
+import Paralympics from '../images/logos/paralympic-team.svg';
+import AGD from '../images/logos/australian-government-of-defence@2x.png';
+import Mastercard from '../images/logos/mastercard.svg';
+import Crown from '../images/logos/crown@2x.png';
+import AusPost from '../images/logos/australia-post.svg';
+import Rfsa from '../images/logos/rfsa@2x.png';
+import Qantas from '../images/logos/qantas.svg';
+import WesternUni from '../images/logos/western-uni@2x.png';
+import Google from '../images/logos/Google_Cloud_logo 1.svg';
+
+const firstRow = [Unilever, SGS, SES, NSW, Toyota, Paralympics, AGD];
+const secondRow = [Mastercard,Crown,AusPost,Rfsa,Qantas,WesternUni,Google];
+
+---
+<section class="py-8 pb-9 bg-grey-20">
+    <h2 class="text-grey-60 px-4 uppercase text-center mb-4 text-l tracking-widest font-semibold">Trusted by</h2>
+    <div class="embla slider-right mt-6">
+        <div class="embla__container slider slider-right items-center flex max-w-[initial] w-auto md:justify-center">
+            {firstRow.map((image) => (
+                <div class="embla__slide w-auto max-w-36 max-h-10 relative md:max-w-52">
+                    <img class="relative self-center flex w-auto max-h-10" src={image.src} alt="logo" />
+                </div>
+            ))}
+        </div>
+    </div>
+    <div class="embla slider-left mt-8">
+        <div class="embla__containerslider slider-left items-center flex max-w-[initial] w-auto md:justify-center">
+            {secondRow.map((image) => (
+                <div class="embla__slide w-auto max-w-36 max-h-10 relative md:max-w-52">
+                    <img class="relative self-center flex w-auto max-h-10" src={image.src} alt="logo" />
+                </div>
+            ))}
+        </div>
+    </div>
+
+</section>
+
+<style>
+    .embla {
+    overflow: hidden;
+    }
+    .embla__container {
+    display: flex;
+    }
+    .embla__slide {
+        flex: 0 0 auto; /* Adapt slide size to its content */
+    min-width: 0;
+    margin-left:2rem;
+    margin-right:2rem;
+    }
+
+</style>
+
+<script>
+    import EmblaCarousel from 'embla-carousel';
+    import Autoscroll from 'embla-carousel-auto-scroll';
+
+    const emblaRight = document.querySelector('.embla.slider-right')
+    const emblaLeft = document.querySelector('.embla.slider-left')
+    const options = { loop: true, stopOnMouseEnter: true, playOnInit: true }
+    const pluginsRight = [Autoscroll({speed:0.5})];
+    const pluginsLeft = [Autoscroll({speed:0.5, direction: 'backward'})];
+    const emblaApiRight = EmblaCarousel(emblaRight, options, pluginsLeft);
+    const emblaApiLeft = EmblaCarousel(emblaLeft, options, pluginsRight);
+
+
+</script>

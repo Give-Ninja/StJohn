@@ -1,0 +1,19 @@
+---
+const currentYear = new Date().getFullYear();
+import Image from "astro/components/Image.astro";
+import logo from '../images/logos/stjohn@2x.png';
+---
+
+<footer class="bg-navy border-t-4 border-red text-white py-8 px-4">
+  <div class="container md:mx-auto">
+    <div class="flex gap-4 items-center">
+        <img src={logo.src} alt="Logo" class="w-10 mb-2" />
+        <div class="flex flex-col gap-2">
+          <h6 class="font-bold">St John Ambulance Australia NSW</h6>
+          <a href="tel:1300785646" class="underline">Call 1300 ST JOHN (78 5646)</a>
+        </div>
+    </div>
+    <p class="my-4 text-sm">St John Ambulance (NSW) delivers nationally recognised training and assessment on behalf of St John Ambulance Australia (RTO 88041).</p>
+    <p class="text-sm">&copy; Copyright {currentYear} – St John Ambulance Australia (NSW). All Rights Reserved.</p>
+  </div>
+</footer>

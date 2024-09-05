@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const stars = [1, 2, 3, 4, 5];
+---
+
+<div class="bg-[#F5F4F4] px-4 pt-8 pb-10 flex flex-col items-center lg:py-20">
+  <div class="flex items-center mb-4 gap-2">
+    <Icon name="wreath-left" class="text-[#00092E] w-7 h-16" />
+    <div class="flex flex-col items-center mx-[-0.8rem]">
+      <div class="flex mb-1.5">
+        {stars.map(() => (
+          <Icon name="star" class="w-4 h-4 text-[#FDB022] mr-0.5" />
+        ))}
+      </div>
+      <p class="text-[#00092E] font-semibold text-[14px] leading-4 mb-1">Rated excellent</p>
+      <p class="text-[#312C2C] text-[12px] leading-[14px]">390+ reviews</p>
+    </div>
+    <Icon name="wreath-right" class="text-[#00092E] w-7 h-16" />
+  </div>
+  
+  <div class="container md:mx-auto lg:max-w-screen-sm">
+    <Icon name="quote" class="text-[#E5173F] w-8 h-8 self-start mb-2" />
+    
+    <p class="text-black font-bold text-base leading-[22px] mb-4 w-full lg:text-xl">
+      "I am so happy... it's a good idea to have this knowledge not just at work, but in everyday life. You never know when these skills are required."
+    </p>
+    
+    <p class="text-grey-80 w-full font-semibold text-[13px] tracking-[3px] uppercase lg:text-base">
+      – Vivienne
+    </p>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+---
+import Button from "./Button.astro";
+const faqs = [
+  {
+    question: "What courses do you offer?",
+    answer: "We offer a range of first aid courses tailored to different workplace environments."
+  },
+  {
+    question: "How long does the training take?",
+    answer: "Most of our courses are one-day sessions, but we also offer shorter refresher courses."
+  },
+  {
+    question: "Do you provide certification?",
+    answer: "Yes, all participants receive a certificate upon successful completion of the course."
+  }
+];
+---
+
+<section class="py-16 px-6 bg-navy lg:py-20">
+  <div class="max-w-7xl mx-auto md:max-w-screen-md">
+    <h2 class="text-3xl font-bold mb-8 text-center text-white lg:mb-10">Frequently asked questions</h2>
+    <div class="space-y-6">
+      <details class="bg-white p-4 cursor-pointer">
+        <summary class="flex justify-between text-1.5xl">
+          <span class="font-bold">What courses do you offer onsite training for?</span>
+          <svg class="shrink-0 w-8 h-8" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9404 19.9391L16 20.9999L17.0617 19.9391L7 9.89988L7 10.9999L7 11.9999L14.9404 19.9391Z" fill="#141414"/>
+            <path d="M15.0617 19.9393L25.1223 9.9L25.1223 12L17.183 19.9393L16.1224 21L15.0617 19.9393Z" fill="#141414"/>
+          </svg>
+        </summary>
+        <div class="mt-4">Some of our most popular courses we provide for onsite workplace training include:
+          <ul class="list-disc pl-8 mt-2 flex flex-col gap-2 mb-4">
+            <li>Provide First Aid</li>
+            <li>CPR</li>
+            <li>Occupational First Aid</li>
+            <li>Education and Care plus Provide First Aid</li>
+            <li>Mental Health and Crisis Support</li>
+          </ul>
+          Don't see the course you're looking for?<br />
+          <button type="button" class="modal-trigger underline">Contact us</button> and we’ll work with you to arrange group training at your workplace for any of the St John Ambulance NSW courses.
+        </div>
+      </details>
+
+      <details class="bg-white p-4 cursor-pointer">
+        <summary class="flex justify-between text-1.5xl">
+          <span class="font-bold">What certification will my employees receive?</span>
+          <svg class="shrink-0 w-8 h-8" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9404 19.9391L16 20.9999L17.0617 19.9391L7 9.89988L7 10.9999L7 11.9999L14.9404 19.9391Z" fill="#141414"/>
+            <path d="M15.0617 19.9393L25.1223 9.9L25.1223 12L17.183 19.9393L16.1224 21L15.0617 19.9393Z" fill="#141414"/>
+          </svg>
+        </summary>
+        <div class="mt-4">We cover  a range of different nationally accredited certifications, some of which include:
+          <ul class="list-disc pl-8 mt-2 flex flex-col gap-2 mb-4">
+            <li>HLTAID009 – Provide cardiopulmonary resuscitation</li>
+            <li>HLTAID010 – Provide basic emergency life support</li>
+            <li>HLTAID011 – Provide First Aid</li>
+            <li>HLTAID012 – Provide First Aid in an education and care setting</li>
+            <li>HLTAID014 – Provide Advanced First Aid</li>
+            <li>HLTAID015 – Provide advanced resuscitation and oxygen therapy</li>
+            <li>HLTAID016 – Manage first aid services and resources</li>
+            <li>CHCCCS019 – Recognise and respond to crisis situations</li>
+          </ul>
+          Don't see the certification you need?<br />
+          <button type="button" class="modal-trigger underline">Contact us</button> and we can arrange for any of our courses to be held at your workplace.
+        </div>
+      </details>
+
+      <details class="bg-white p-4 cursor-pointer">
+        <summary class="flex justify-between text-1.5xl">
+          <span class="font-bold">Are there any requirements for my workplace to be able to host onsite training?</span>
+          <svg class="shrink-0 w-8 h-8" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9404 19.9391L16 20.9999L17.0617 19.9391L7 9.89988L7 10.9999L7 11.9999L14.9404 19.9391Z" fill="#141414"/>
+            <path d="M15.0617 19.9393L25.1223 9.9L25.1223 12L17.183 19.9393L16.1224 21L15.0617 19.9393Z" fill="#141414"/>
+          </svg>
+        </summary>
+        <div class="mt-4">We can train a group with a maximum of 18 people.<br />Your venue must have:
+          <ul class="list-disc pl-8 mt-2 flex flex-col gap-2 mb-4">
+            <li>A room with enough space and seating for all participants plus first aid trainer</li>
+            <li>A projector or large screen and speakers that can be used by the trainer</li>
+            <li>Bathrooms</li>
+            <li>Wifi access</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="bg-white p-4 cursor-pointer">
+        <summary class="flex justify-between text-1.5xl">
+          <span class="font-bold">I don't know if my workplace has enough space. Can we still do group training?</span>
+          <svg class="shrink-0 w-8 h-8" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9404 19.9391L16 20.9999L17.0617 19.9391L7 9.89988L7 10.9999L7 11.9999L14.9404 19.9391Z" fill="#141414"/>
+            <path d="M15.0617 19.9393L25.1223 9.9L25.1223 12L17.183 19.9393L16.1224 21L15.0617 19.9393Z" fill="#141414"/>
+          </svg>
+        </summary>
+        <div class="mt-4">We have over 40 training venues across New South Wales and are regularly adding new locations to that list.<br />
+          <button type="button" class="modal-trigger underline">Contact us</button> and we can help you find the best venue to host group training for your business.
+        </div>
+      </details>
+    </div>
+  </div>
+  <div class="text-center mt-8 lg:mt-14">
+    <Button>Get free consultation</Button>
+  </div>
+</section>

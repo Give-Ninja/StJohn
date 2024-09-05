@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import ACNC from '../images/ACNC-registered-charity@2x.jpg';
+import ChildWise from '../images/child-wise-accredited@2x.jpg';
+import NationallyRecognised from '../images/nationally-recognised-training@2x.jpg';
+import SocialTraders from '../images/social-traders-certified@2x.jpg';
+
+---
+
+<section class="px-4 pt-10 pb-14 bg-white lg:py-20">
+    <h2 class="text-center flex flex-col gap-1 mb-8 lg:mb-12">
+        <span class="text-3xl text-red font-bold tracking-wider lg:text-5xl">50,000+</span>
+        <span class="text-xl lg:text-2xl lg:mt-2">certifications issued in 2023</span>
+    </h2>
+    <div class="flex gap-4 justify-center items-center align-middle md:gap-10 lg:gap-14">
+        <Image class="max-w-20 h-auto self-center lg:max-w-24" src={ACNC} alt="Valid ACNC registered charity badge" />
+        <Image class="max-w-20 h-auto self-center lg:max-w-24" src={NationallyRecognised} alt="Nationally recognised training certificate" />
+        <Image class="max-w-20 h-auto self-center lg:max-w-24" src={SocialTraders} alt="Certified Social Traders" />
+        <Image class="max-w-20 h-auto self-center lg:max-w-24" src={ChildWise} alt="Child Wise accredited" />
+    </div>
+
+</section>

@@ -1,24 +1,48 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/HowItWorks.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+import Review from '../components/Review.astro';
+import Training from '../components/Training.astro';
+import Scenario from '../components/Scenario.astro';
+import Badges from '../components/Badges.astro';
+import TrustedBy from '../components/TrustedBy.astro';
+import Topbar from '../components/Topbar.astro';
+import Modal from '../components/Modal.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<Layout title="First Aid Training">
+  <section class="sticky top-0 z-20">
+    <Topbar />
+    <Header />
+  </section>
+  <main>
+  <Hero />
+  <TrustedBy />
+  <Features />
+	<Review />
+	<Training />
+  <Scenario />
+  <Badges />
+  <FAQ />
+  </main>
+  <Footer />
+  <Modal />
+</Layout>
+<script async defer is:inline>
+  const buttons = document.querySelectorAll('.modal-trigger');
+  buttons.forEach(button => button.addEventListener('click', toggleModal));
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
-</html>
+  const modal = document.getElementById('modal');
+
+  function toggleModal(e){
+    modal.ariaHidden = (modal.ariaHidden == 'true') ? 'false' : 'true';
+    modal.classList.toggle('open');
+    if(modal.ariaHidden == 'false'){
+      document.addEventListener('keydown', e => e.key === 'Escape' && toggleModal(), { once: true });
+    }
+  }
+</script>
