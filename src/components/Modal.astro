@@ -15,7 +15,53 @@ class="modal-container flex flex-col justify-end fixed w-full h-screen -bottom-f
             </button>   
         </div>
         <div class="p-4 overflow-y-auto modal-body">
-            <p>test</p>
+            <form id="consultationForm" class="flex flex-col gap-6" method="POST" action="/api/submit">
+                <div>
+                    <label for="name" class="block mb-2 text-l font-medium text-navy">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 text-navy border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-navy" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-l font-medium text-navy">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 text-navy border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-navy" required>
+                </div>
+                <div>
+                    <label for="organisation" class="block mb-2 text-l font-medium text-navy">Organisation Name</label>
+                    <input type="text" id="organisation" name="organisation" class="w-full px-3 py-2 text-navy border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-navy" required>
+                </div>
+                <div>
+                    <label for="phone" class="block mb-2 text-l font-medium text-navy">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 text-navy border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-navy" required>
+                </div>
+                <button
+                        type="submit"
+                        class="bg-red text-white font-bold text-xl p-4 w-full rounded-sm hover:opacity-85 focus:ring-2 md:w-auto md:px-6"
+                    >Request a consultation</button>
+            </form>
+
+            <script>
+                document.getElementById('consultationForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData.entries());
+                    console.log('Form data:', data);
+                    // Here you would typically send the data to your server
+                    // For example: 
+                    // fetch('/api/submit-consultation', {
+                    //     method: 'POST',
+                    //     headers: {
+                    //         'Content-Type': 'application/json',
+                    //     },
+                    //     body: JSON.stringify(data),
+                    // })
+                    // .then(response => response.json())
+                    // .then(data => {
+                    //     console.log('Success:', data);
+                    // })
+                    // .catch((error) => {
+                    //     console.error('Error:', error);
+                    // });
+                });
+            </script>
         </div>
     </div>
 </div>
