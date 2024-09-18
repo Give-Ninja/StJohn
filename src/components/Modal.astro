@@ -15,7 +15,7 @@ class="modal-container flex flex-col justify-end fixed w-full h-screen -bottom-f
             </button>   
         </div>
         <div class="p-4 overflow-y-auto modal-body">
-            <form id="consultationForm" class="flex flex-col gap-6" method="POST" action="/api/submit">
+            <form id="consultationForm" name="consultationForm" class="flex flex-col gap-6" method="POST" netlify>
                 <div>
                     <label for="name" class="block mb-2 text-l font-medium text-navy">Name</label>
                     <input type="text" id="name" name="name" class="w-full px-3 py-2 text-navy border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-navy" required>
@@ -37,31 +37,6 @@ class="modal-container flex flex-col justify-end fixed w-full h-screen -bottom-f
                         class="bg-red text-white font-bold text-xl p-4 w-full rounded-sm hover:opacity-85 focus:ring-2 md:w-auto md:px-6"
                     >Request a consultation</button>
             </form>
-
-            <script>
-                document.getElementById('consultationForm').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData.entries());
-                    console.log('Form data:', data);
-                    // Here you would typically send the data to your server
-                    // For example: 
-                    // fetch('/api/submit-consultation', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'Content-Type': 'application/json',
-                    //     },
-                    //     body: JSON.stringify(data),
-                    // })
-                    // .then(response => response.json())
-                    // .then(data => {
-                    //     console.log('Success:', data);
-                    // })
-                    // .catch((error) => {
-                    //     console.error('Error:', error);
-                    // });
-                });
-            </script>
         </div>
     </div>
 </div>
@@ -86,3 +61,25 @@ class="modal-container flex flex-col justify-end fixed w-full h-screen -bottom-f
     @apply md:opacity-100 md:self-center md:w-full md:max-w-screen-md md:m-auto md:max-h-[90vh]
 }
 </style>
+
+
+<script is:inline>
+    const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+    })
+        .then(() => console.log("Form successfully submitted"))
+        .catch((error) => alert(error));
+    };
+
+    document
+    .querySelector("form")
+    .addEventListener("submit", handleSubmit);
+</script>
